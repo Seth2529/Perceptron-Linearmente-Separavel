@@ -17,7 +17,6 @@ namespace Perceptron_Linearmente_Separavel
         {
             W1 = novoW1;
             W2 = novoW2;
-            Console.WriteLine($"{novoW1}{novoW2}");
         }
 
         public Pesos()

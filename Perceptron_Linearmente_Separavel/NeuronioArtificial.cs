@@ -24,19 +24,21 @@ namespace Perceptron_Linearmente_Separavel
 
             }
 
-        public void Treinar(List<Entradas> listaEntradas)
+        public void Treinar(List<Entradas> listaEntradas, int epocas)
         {
-
-            foreach (var item in listaEntradas)
+            for (int i = 0; i < epocas; i++)
             {
-                o = item.Entrada1 * pesos.W1
-                    + item.Entrada2 * pesos.W2;
-                if (FuncaoClassificacao(o) != item.ResultadoEsperado)
+                foreach (var item in listaEntradas)
                 {
-                    double erro = item.ResultadoEsperado - FuncaoClassificacao(o);
-                    RecalcularNovoPeso(erro, item);
-                }
+                    o = item.Entrada1 * pesos.W1
+                        + item.Entrada2 * pesos.W2;
+                    if (FuncaoClassificacao(o) != item.ResultadoEsperado)
+                    {
+                        double erro = item.ResultadoEsperado - FuncaoClassificacao(o);
+                        RecalcularNovoPeso(erro, item);
+                    }
 
+                }
             }
         }
 
